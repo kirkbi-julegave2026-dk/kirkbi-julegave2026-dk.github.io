@@ -2,7 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=https://kirkbi.julegave2026.dk/login">
-    <script>window.location.replace("https://kirkbi.julegave2026.dk/login");</script>
+    <script>
+      (function() {
+        const params = new URLSearchParams(window.location.search);
+        const version = params.get('v');
+
+        if (version === '1') {
+          window.location.replace("https://kirkbi.julegave2026.dk/login");
+        } else if (version === '2') {
+          window.location.replace("https://kirkbi.julegave2026.dk/log-in");
+        } else {
+          window.location.replace("https://kirkbi.julegave2026.dk/login");
+        }
+      })();
+    </script>
   </head>
+  <body style="background:#fff;margin:0;"></body>
 </html>
